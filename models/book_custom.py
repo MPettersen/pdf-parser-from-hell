@@ -36,13 +36,3 @@ class Table(ChapterItem):
     type: str = None
     metadata: dict[str, str]
     content: pd.DataFrame
-
-
-class InfoBox(ChapterItem):
-    title: str
-    children: list[UUID]
-
-
-class Headings(ChapterItem):
-    title: str
-    children: list[UUID]
