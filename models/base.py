@@ -17,7 +17,7 @@ class ChapterItem(BaseModel):
 
 class TitleChildrenItem(ChapterItem):
     title: str
-    children: list[UUID]
+    children: list[UUID] = Field(default_factory=list)
 
 
 class TitleChildrenCostItem(TitleChildrenItem):
