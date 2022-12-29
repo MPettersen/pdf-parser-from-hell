@@ -1,4 +1,5 @@
 import os
+import sys
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
@@ -6,21 +7,22 @@ import dash_bootstrap_components as dbc
 from joblib import dump, load
 from dotenv import load_dotenv
 from dash import Dash, html, dcc, Input, Output, State
-from utils.containers import (
+from dash_utils.containers import (
     add_new_book,
     breadcrumb_nav_bar,
     select_book,
     get_books
 )
-from models import Book, Advantage, Chapter
-from utils.helpers import (
+from dash_utils.helpers import (
     get_books
+)
+from models import (
+    Book
 )
 
 load_dotenv()
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
-
 
 app.layout = dbc.Container(
     [
