@@ -1,6 +1,5 @@
 from models.base import TitleChildrenCostItem as SubAdvantage
 from models.base import TitleChildrenCostItem as SpecialLimitation
-from models.base import TitleChildrenCostItem as SpecialLimitation
 from models.base import TitleChildrenCostItem as SpecialEnhancement
 from models.base import TitleChildrenCostItem as SubDisadvantage
 from models.base import TitleChildrenCostItem as PsionicPower
