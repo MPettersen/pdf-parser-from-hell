@@ -6,7 +6,6 @@ from joblib import load, dump
 import dash_bootstrap_components as dbc
 
 
-
 def openfile(filename: str):
     filepath = os.path.join("app/pages/", filename)
     with open(filepath, "r", encoding="utf-8") as input_file:

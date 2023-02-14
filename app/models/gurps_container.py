@@ -1,13 +1,13 @@
 from uuid import UUID
 from pydantic import Field
 
-from models.book_container import BookContainer
-from models.gurps_custom import (
+from app.models.book_container import BookContainer
+from app.models.gurps_custom import (
     Skill,
     Technique,
     Spell
 )
-from models.gurps_general import (
+from app.models.gurps_general import (
     Advantage,
     SubAdvantage,
     Disadvantage,
