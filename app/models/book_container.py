@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 from models.book_custom import (
     Book,
-    Paragraphs,
+    ParagraphsMetadata,
     List,
     Table
 )
@@ -25,7 +25,7 @@ class BookContainer(BaseModel):
     """
     book: Book
     chapters: dict[UUID, Chapter] = Field(default_factory=dict)
-    paragraphs: dict[UUID, Paragraphs] = Field(default_factory=dict)
+    paragraphs: dict[UUID, ParagraphsMetadata] = Field(default_factory=dict)
     lists: dict[UUID, List] = Field(default_factory=dict)
     tables: dict[UUID, Table] = Field(default_factory=dict)
     info_boxes: dict[UUID, InfoBox] = Field(default_factory=dict)
@@ -50,7 +50,7 @@ class BookContainer(BaseModel):
     def _add(self, obj):
         if isinstance(obj, Chapter):
             self.chapters[obj.id] = obj
-        elif isinstance(obj, Paragraphs):
+        elif isinstance(obj, ParagraphsMetadata):
             self.paragraphs[obj.id] = obj
         elif isinstance(obj, List):
             self.lists[obj.id] = obj

@@ -1,33 +1,42 @@
 import os
+import sys
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
+from uuid import uuid4
 from joblib import dump, load
 from dotenv import load_dotenv
 from dash import Dash, html, dcc, Input, Output, State
-from utils.containers import (
+from dash_utils.containers import (
     add_new_book,
     breadcrumb_nav_bar,
     select_book,
     get_books
 )
-from models import Book, Advantage, Chapter
-from utils.helpers import (
+from dash_utils.helpers import (
     get_books
+)
+from models import (
+    Item,
+    Book
 )
 
 load_dotenv()
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
 
-
 app.layout = dbc.Container(
     [
         dcc.Location(id='url'),
         breadcrumb_nav_bar,
-        add_new_book,
-        select_book
+        dbc.Container(
+            [
+                add_new_book,
+                select_book
+            ],
+            id="page-content"
+        )
     ]
 )
 
@@ -38,11 +47,17 @@ app.layout = dbc.Container(
 )
 def add_book(n_clicks, title):
     if title is not None and title != '':
-        book = Book(
-            title=title,
-            chapters=[]
+        book = Book(title=title)
+        book_id = uuid4()
+        item = Item(
+            id=book_id,
+            parent_id=book_id,
+            book_id=book_id,
+            type="book",
+            metadata=book.dict()
         )
-        dump(book, f"books/{title}.joblib")
+        df = pd.DataFrame([item])
+        dump(df, f"books/{title}.joblib")
     return get_books()
 
 

@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 
 from dash import Dash, html, dcc, Input, Output
 
-from utils.helpers import (
+from dash_utils.helpers import (
     remove_file_ext,
     get_books
 )

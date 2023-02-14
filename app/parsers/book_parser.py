@@ -9,7 +9,7 @@ from utils import (
 from models import (
     Book,
     Chapter,
-    Paragraphs,
+    ParagraphsMetadata,
     List,
     Table
 )
