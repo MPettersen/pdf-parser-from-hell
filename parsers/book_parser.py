@@ -3,15 +3,8 @@ import pandas as pd
 from io import StringIO
 from uuid import UUID
 
-from utils import (
+from parsers.utils import (
     remove_newlines
-)
-from models import (
-    Book,
-    Chapter,
-    ParagraphsMetadata,
-    List,
-    Table
 )
 from parsers.list import (
     parse_dot_list,

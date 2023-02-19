@@ -1,3 +1,4 @@
+from models.base import TitleChildrenCostItem as Attribute
 from models.base import TitleChildrenCostItem as SubAdvantage
 from models.base import TitleChildrenCostItem as SpecialLimitation
 from models.base import TitleChildrenCostItem as SpecialEnhancement

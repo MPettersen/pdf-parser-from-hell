@@ -1,4 +1,4 @@
-from utils import (
+from parsers.utils import (
     remove_newlines
 )
 from parsers.common import (
@@ -18,7 +18,7 @@ def split_list(txt: str, delim: str) -> list[str]:
 def parse_dot_list(txt: str, delim: str = '•') -> list[str | dict[str, str]]:
     """Parse dot lists from text."""
     temp = split_list(txt, delim)
-    temp.pop(0)
+    #temp.pop(0)
     return temp
 
 
@@ -58,6 +58,8 @@ def parse_number_list(txt: str) -> list[str]:
             buffer = t
         else:
             buffer += f" {t}"
+    if entry_not_empty(buffer):
+        l.append(buffer)
     return l
 
 

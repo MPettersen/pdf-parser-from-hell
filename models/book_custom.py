@@ -40,7 +40,7 @@ class List(BookItem):
     page: int
     title: str = None
     type: str = None
-    content: list[str | dict[str, str]]
+    content: list[str | dict[str, str]] | dict[str, str]
 
 
 class Table(BookItem):
@@ -60,5 +60,5 @@ class Table(BookItem):
     """
     title: str = None
     type: str = None
-    metadata: dict[str, str]
-    content: pd.DataFrame
+    metadata: dict[str, str] = None
+    content: dict

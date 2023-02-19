@@ -10,7 +10,6 @@ Item = make_dataclass(
     [
         ("id", UUID, field(default_factory=uuid4)),
         ("parent_id", UUID, None),
-        ("book_id", UUID, None),
         ("type", str, None),
         ("metadata", dict, field(default_factory=dict)),
     ]
@@ -43,7 +42,6 @@ class TitleChildrenItem(BookItem):
         title (str): The title of the item.
         children (list[UUID]): The list of children IDs. Defaults to [].
     """
-    page: int
     title: str
     children: list[UUID] = Field(default_factory=list)
 
