@@ -133,5 +133,4 @@ books/
 images/
 
 # Proprietary notebooks
-test.ipynb
-parse_gurps.ipynb
+*.ipynb
