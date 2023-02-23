@@ -1,9 +1,7 @@
 # Proprietary notebooks
-*.ipynb
 parse_gurps.ipynb
-parse_gurps*
 test.ipynb
-test*
+tests/test_values.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
