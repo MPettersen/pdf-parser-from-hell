@@ -12,7 +12,11 @@ from models import (
     InfoBox,
     Table,
     Attribute,
-    SpecialLimitation
+    SpecialLimitation,
+    Advantage,
+    Perk,
+    Enhancement,
+    Limitation
 )
 from parsers import (
     parse_paragraphs,
@@ -198,5 +202,71 @@ def add_special_limitation(
         items=items,
         parent_id=parent_id,
         type_="special_limitation",
+        metadata=meta.dict()
+    )
+
+
+def add_advantage(
+    text: str,
+    items: list[Item],
+    parent_id: UUID,
+    cost: str = '',
+    types: list[str] = None,
+    page: int = -1
+) -> Item:
+    meta = Advantage(title=text, page=page, cost=cost, types=types)
+    return add_item(
+        items=items,
+        parent_id=parent_id,
+        type_="advantage",
+        metadata=meta.dict()
+    )
+
+def add_perk(
+    text: str,
+    items: list[Item],
+    parent_id: UUID,
+    types: list[str] = None,
+    page: int = -1
+) -> Item:
+    meta = Perk(title=text, page=page, types=types)
+    return add_item(
+        items=items,
+        parent_id=parent_id,
+        type_="perk",
+        metadata=meta.dict()
+    )
+
+
+def add_enhancement(
+    text: str,
+    items: list[Item],
+    parent_id: UUID,
+    cost: str = '',
+    types: list[str] = None,
+    page: int = -1
+) -> Item:
+    meta = Enhancement(title=text, page=page, cost=cost, types=types)
+    return add_item(
+        items=items,
+        parent_id=parent_id,
+        type_="enhancement",
+        metadata=meta.dict()
+    )
+
+
+def add_limitation(
+    text: str,
+    items: list[Item],
+    parent_id: UUID,
+    cost: str = '',
+    types: list[str] = None,
+    page: int = -1
+) -> Item:
+    meta = Limitation(title=text, page=page, cost=cost, types=types)
+    return add_item(
+        items=items,
+        parent_id=parent_id,
+        type_="limitation",
         metadata=meta.dict()
     )
