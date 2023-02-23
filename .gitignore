@@ -131,3 +131,7 @@ dmypy.json
 # Working folders
 books/
 images/
+
+# Proprietary notebooks
+test.ipynb
+parse_gurps.ipynb
