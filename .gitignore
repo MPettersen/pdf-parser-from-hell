@@ -1,3 +1,10 @@
+# Proprietary notebooks
+*.ipynb
+parse_gurps.ipynb
+parse_gurps*
+test.ipynb
+test*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
