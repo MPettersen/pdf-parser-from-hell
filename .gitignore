@@ -1,3 +1,8 @@
+# Proprietary notebooks
+parse_gurps.ipynb
+test.ipynb
+tests/test_values.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +132,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Working folders
+books/
+images/
+
+# Proprietary notebooks
+*.ipynb
